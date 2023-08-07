@@ -1,0 +1,30 @@
+#Project 5(Fractal Tree)
+#Start code here
+from turtle import *
+turtle = Turtle()
+turtle.color("brown")
+turtle.left(90)
+turtle.speed(0)
+def tree(length, width):
+  turtle.width(width)
+  if length<=10:
+    turtle.color("green")
+    turtle.forward(length)
+    turtle.left(30)
+    turtle.forward(0.75*length)
+    turtle.backward(0.75*length)
+    turtle.right(60)
+    turtle.forward(0.75*length)
+    turtle.backward(0.75*length)
+    turtle.left(30)
+    turtle.backward(length)
+    turtle.color("brown")
+  else:
+    turtle.forward(length)
+    turtle.left(30)
+    tree(.75*length, 0.8*width)
+    turtle.right(60)
+    tree(.75*length, 0.8*width)
+    turtle.left(30)
+    turtle.backward(length)
+tree(50, 10)
